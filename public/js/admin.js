@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statTotal = document.getElementById('stat-total');
   const statOpen = document.getElementById('stat-open');
   const statResolved = document.getElementById('stat-resolved');
+  const statDollars = document.getElementById('stat-dollars');
 
   function escapeHtml(str) {
     const div = document.createElement('div');
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statTotal.textContent = fines.length;
     statOpen.textContent = fines.filter(f => !f.resolved).length;
     statResolved.textContent = fines.filter(f => f.resolved).length;
+    statDollars.textContent = `$${fines.reduce((sum, f) => sum + (f.amount || 0), 0)}`;
 
     emptyMsg.style.display = fines.length ? 'none' : 'block';
 
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${escapeHtml(fine.offense_date)}</td>
         <td>${escapeHtml(fine.submitted_by)}</td>
         <td><input type="text" class="punishment-input" data-id="${fine.id}" value="${escapeHtml(fine.punishment || '')}" placeholder="assign one..." style="min-width:140px;"></td>
+        <td>$${fine.amount || 0}</td>
         <td><button class="status-pill ${fine.resolved ? 'resolved' : 'open'}" data-id="${fine.id}" data-resolved="${fine.resolved ? 1 : 0}">${fine.resolved ? 'Resolved' : 'Open'}</button></td>
         <td><button class="small-btn delete-btn" data-id="${fine.id}">Delete</button></td>
       `;
