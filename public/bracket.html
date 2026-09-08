@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickleball Bracket — Barkus' Big Fat Greek Bucks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="emoji">B</span> Barkus' Big Fat Greek Bucks</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="attendees.html">Attendees</a>
+      <a href="itinerary.html" class="active">Itinerary</a>
+      <a href="flights.html">Flights</a>
+      <a href="fines.html">Fines &amp; Rules</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap" style="padding-top:2.5rem;">
+
+  <section class="section">
+    <a href="itinerary.html" class="muted" style="text-decoration:underline;">← Back to itinerary</a>
+    <h1 style="margin-top:0.8rem;">🏓 Pickleball Bracket</h1>
+    <p class="muted">Friday 15 Jan, 11am–1pm. Teams get randomly assigned on the day — type them in below as
+      they're drawn, then tap <strong>Win →</strong> on whoever takes each match to send them through to the
+      next round. It saves automatically on this device.</p>
+  </section>
+
+  <section class="section">
+    <h2>Quarterfinals</h2>
+    <div class="grid">
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="qf1-a" placeholder="Team 1" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf1-a" data-target="sf1-a">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="qf1-b" placeholder="Team 2" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf1-b" data-target="sf1-a">Win →</button>
+        </div>
+      </div>
+
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="qf2-a" placeholder="Team 3" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf2-a" data-target="sf1-b">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="qf2-b" placeholder="Team 4" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf2-b" data-target="sf1-b">Win →</button>
+        </div>
+      </div>
+
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="qf3-a" placeholder="Team 5" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf3-a" data-target="sf2-a">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="qf3-b" placeholder="Team 6" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf3-b" data-target="sf2-a">Win →</button>
+        </div>
+      </div>
+
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="qf4-a" placeholder="Team 7" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf4-a" data-target="sf2-b">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="qf4-b" placeholder="Team 8" maxlength="40">
+          <button class="small-btn win-btn" data-source="qf4-b" data-target="sf2-b">Win →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Semifinals</h2>
+    <div class="grid">
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="sf1-a" placeholder="Winner QF1" maxlength="40">
+          <button class="small-btn win-btn" data-source="sf1-a" data-target="f1-a">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="sf1-b" placeholder="Winner QF2" maxlength="40">
+          <button class="small-btn win-btn" data-source="sf1-b" data-target="f1-a">Win →</button>
+        </div>
+      </div>
+
+      <div class="card bracket-match">
+        <div class="bracket-row">
+          <input class="team-input" id="sf2-a" placeholder="Winner QF3" maxlength="40">
+          <button class="small-btn win-btn" data-source="sf2-a" data-target="f1-b">Win →</button>
+        </div>
+        <div class="bracket-row">
+          <input class="team-input" id="sf2-b" placeholder="Winner QF4" maxlength="40">
+          <button class="small-btn win-btn" data-source="sf2-b" data-target="f1-b">Win →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Grand Final</h2>
+    <div class="card bracket-match" style="max-width:420px;">
+      <div class="bracket-row">
+        <input class="team-input" id="f1-a" placeholder="Winner SF1" maxlength="40">
+        <button class="small-btn win-btn" data-source="f1-a" data-target="champion">Win →</button>
+      </div>
+      <div class="bracket-row">
+        <input class="team-input" id="f1-b" placeholder="Winner SF2" maxlength="40">
+        <button class="small-btn win-btn" data-source="f1-b" data-target="champion">Win →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section card center" style="border-color:var(--accent);">
+    <h2 style="margin-bottom:0.3rem;">🏆 Champion</h2>
+    <input class="team-input champion-input" id="champion" placeholder="TBD" maxlength="40" style="text-align:center;font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;">
+  </section>
+
+  <section class="section center">
+    <button id="reset-bracket" class="btn btn-secondary">Reset bracket</button>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="greek-key"></div>
+  <p>Barkus' Big Fat Greek Bucks · Ho Chi Minh City · 14–18 Jan 2027</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/bracket.js"></script>
+</body>
+</html>

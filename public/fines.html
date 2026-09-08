@@ -19,6 +19,7 @@
       <a href="index.html">Home</a>
       <a href="attendees.html">Attendees</a>
       <a href="itinerary.html">Itinerary</a>
+      <a href="flights.html">Flights</a>
       <a href="fines.html" class="active">Fines &amp; Rules</a>
       <a href="admin.html">Admin</a>
     </nav>
@@ -46,30 +47,51 @@
 
   <section class="section">
     <h2>Standard Punishments</h2>
-    <p class="muted">Whoever's holding court picks the punishment to fit the crime. Some classics to draw from:</p>
+    <p class="muted">Whoever's holding court picks the punishment to fit the crime — each one's got a price
+      tag too. <strong>Max $10 total per person, per day</strong> — once someone's maxed out for the day,
+      further fines still count on the record (and the humiliation still applies), they just stop costing
+      more money.</p>
     <ul class="punishment-list">
-      <li><strong>The Sash of Shame</strong> Wear the sash until someone else gets fined and takes it off you.</li>
-      <li><strong>Mystery Shot</strong> Bartender's choice. No questions, no chaser, no complaints.</li>
-      <li><strong>Buy-a-Round</strong> You're shouting the next round for the whole group. All of them.</li>
-      <li><strong>Opposite Hand Only</strong> Your next drink is non-dominant hand only, spills and all.</li>
-      <li><strong>The Waiter's Apprentice</strong> You're on drink-running duty for the group for the next hour.</li>
-      <li><strong>Toast in Character</strong> Propose the next toast in an accent voted on by the group.</li>
-      <li><strong>Truth Corner</strong> Answer three embarrassing questions from the group. No dodging.</li>
-      <li><strong>The Chicken Dance</strong> Perform it, in full, in the middle of the venue. Filmed, obviously.</li>
-      <li><strong>Silent Treatment</strong> No talking for 30 minutes. Charades only if you need something.</li>
-      <li><strong>The Naming Game</strong> Must refer to Barkus by his full ceremonial title for the rest of the day.</li>
+      <li><span class="punishment-price">$1</span><strong>The Sash of Shame</strong> Wear the sash until someone else gets fined and takes it off you.</li>
+      <li><span class="punishment-price">$3</span><strong>Mystery Shot</strong> Bartender's choice. No questions, no chaser, no complaints.</li>
+      <li><span class="punishment-price">$5</span><strong>Buy-a-Round</strong> You're shouting the next round for the whole group. All of them.</li>
+      <li><span class="punishment-price">$1</span><strong>Opposite Hand Only</strong> Your next drink is non-dominant hand only, spills and all.</li>
+      <li><span class="punishment-price">$2</span><strong>The Waiter's Apprentice</strong> You're on drink-running duty for the group for the next hour.</li>
+      <li><span class="punishment-price">$1</span><strong>Toast in Character</strong> Propose the next toast in an accent voted on by the group.</li>
+      <li><span class="punishment-price">$2</span><strong>Truth Corner</strong> Answer three embarrassing questions from the group. No dodging.</li>
+      <li><span class="punishment-price">$3</span><strong>The Chicken Dance</strong> Perform it, in full, in the middle of the venue. Filmed, obviously.</li>
+      <li><span class="punishment-price">$2</span><strong>Silent Treatment</strong> No talking for 30 minutes. Charades only if you need something.</li>
+      <li><span class="punishment-price">$1</span><strong>The Naming Game</strong> Must refer to Barkus by his full ceremonial title for the rest of the day.</li>
+      <li><span class="punishment-price">$5</span><strong>Call Mum/Dad</strong> Ring a parent and tell them you're gay. Straight face, no laughing.</li>
     </ul>
   </section>
 
   <section class="section card">
     <h2>Report a Fine</h2>
-    <p class="muted">Open to everyone. Be specific — vague accusations get thrown out by the judge.</p>
+    <p class="muted">Open to everyone. Be specific — vague accusations get thrown out by the judge.
+      Remember: $10 cap per person per day, so fines get automatically trimmed once someone's maxed out.</p>
     <form id="fine-form">
       <label for="accused">Who's getting fined?</label>
-      <input type="text" id="accused" name="accused" placeholder="e.g. Jake Ian Holder" required maxlength="200">
+      <input type="text" id="accused" name="accused" placeholder="e.g. Jake Holder" required maxlength="200">
 
       <label for="reason">What did they do?</label>
       <textarea id="reason" name="reason" placeholder="Be specific. The judge appreciates detail." required maxlength="1000"></textarea>
+
+      <label for="punishment">Punishment (sets the fine amount)</label>
+      <select id="punishment" name="punishment" required>
+        <option value="" disabled selected>Choose a punishment…</option>
+        <option value="The Sash of Shame">The Sash of Shame — $1</option>
+        <option value="Mystery Shot">Mystery Shot — $3</option>
+        <option value="Buy-a-Round">Buy-a-Round — $5</option>
+        <option value="Opposite Hand Only">Opposite Hand Only — $1</option>
+        <option value="The Waiter's Apprentice">The Waiter's Apprentice — $2</option>
+        <option value="Toast in Character">Toast in Character — $1</option>
+        <option value="Truth Corner">Truth Corner — $2</option>
+        <option value="The Chicken Dance">The Chicken Dance — $3</option>
+        <option value="Silent Treatment">Silent Treatment — $2</option>
+        <option value="The Naming Game">The Naming Game — $1</option>
+        <option value="Call Mum/Dad">Call Mum/Dad — $5</option>
+      </select>
 
       <label for="offense_date">When did this happen?</label>
       <input type="date" id="offense_date" name="offense_date" required min="2027-01-14" max="2027-01-19">
