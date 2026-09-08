@@ -585,6 +585,18 @@ table.fines-table th { color: var(--text-faint); font-size: 0.72rem; text-transf
   flex-wrap: wrap;
   margin-top: 1.4rem;
 }
+.hero .countdown-grid {
+  justify-content: flex-start;
+  margin: 0.3rem 0 1.6rem;
+}
+.hero .countdown-unit {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(4px);
+  padding: 0.6rem 0.85rem;
+  min-width: 62px;
+}
+.hero .countdown-num { font-size: 1.5rem; }
 .countdown-unit {
   display: flex;
   flex-direction: column;
