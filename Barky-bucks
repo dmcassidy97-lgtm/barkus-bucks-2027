@@ -1,0 +1,4 @@
+cd "/Users/declancassidy/Claude Code/bucks-party-site"
+git remote add origin https://github.com/dmcassidy97-lgtm/barkus-bucks-2027.git
+git branch -M main
+git push -u origin main
