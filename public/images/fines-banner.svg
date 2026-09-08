@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract dark gradient banner">
+  <defs>
+    <radialGradient id="g3" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0d" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0a0d" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="b3"><feGaussianBlur stdDeviation="55"/></filter>
+  </defs>
+  <rect width="1600" height="500" fill="#0a0a0d"/>
+  <circle cx="800" cy="200" r="340" fill="url(#g3)" filter="url(#b3)"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="1600" y2="100"/>
+    <line x1="0" y1="250" x2="1600" y2="250"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="800" y1="0" x2="800" y2="500"/>
+    <line x1="1200" y1="0" x2="1200" y2="500"/>
+  </g>
+  <!-- minimal scale-of-justice mark, geometric not illustrative -->
+  <g stroke="#f4f4f2" stroke-opacity="0.5" stroke-width="3" fill="none">
+    <line x1="800" y1="160" x2="800" y2="320"/>
+    <line x1="720" y1="180" x2="880" y2="180"/>
+    <path d="M 720 180 L 690 240 L 750 240 Z"/>
+    <path d="M 880 180 L 850 240 L 910 240 Z"/>
+    <line x1="760" y1="320" x2="840" y2="320"/>
+  </g>
+  <rect width="1600" height="500" fill="url(#fade4)"/>
+</svg>

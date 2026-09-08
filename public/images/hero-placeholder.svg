@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract dark gradient with a minimal Saigon skyline silhouette">
+  <defs>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ff5a2c" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff5a2c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffb648" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffb648" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0d" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0a0d" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0a0d"/>
+
+  <!-- soft glow blobs -->
+  <circle cx="850" cy="260" r="420" fill="url(#glow1)" filter="url(#blur1)"/>
+  <circle cx="1250" cy="480" r="260" fill="url(#glow2)" filter="url(#blur2)"/>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+    <line x1="0" y1="150" x2="1600" y2="150"/>
+    <line x1="0" y1="300" x2="1600" y2="300"/>
+    <line x1="0" y1="450" x2="1600" y2="450"/>
+    <line x1="0" y1="600" x2="1600" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="900"/>
+    <line x1="500" y1="0" x2="500" y2="900"/>
+    <line x1="800" y1="0" x2="800" y2="900"/>
+    <line x1="1100" y1="0" x2="1100" y2="900"/>
+    <line x1="1400" y1="0" x2="1400" y2="900"/>
+  </g>
+
+  <!-- minimal skyline silhouette, single tone -->
+  <g fill="#151519">
+    <rect x="0" y="640" width="90" height="260"/>
+    <rect x="100" y="600" width="60" height="300"/>
+    <rect x="175" y="660" width="110" height="240"/>
+    <rect x="300" y="560" width="70" height="340"/>
+    <polygon points="700,900 700,470 745,420 810,400 875,420 920,470 920,900" fill="#181820"/>
+    <rect x="1050" y="620" width="80" height="280"/>
+    <rect x="1145" y="580" width="65" height="320"/>
+    <rect x="1225" y="650" width="100" height="250"/>
+    <rect x="1340" y="600" width="75" height="300"/>
+    <rect x="1430" y="640" width="90" height="260"/>
+    <rect x="1530" y="670" width="70" height="230"/>
+  </g>
+
+  <!-- subtle accent windows on central tower only -->
+  <g fill="#ff5a2c" opacity="0.5">
+    <rect x="730" y="460" width="10" height="14"/>
+    <rect x="760" y="460" width="10" height="14"/>
+    <rect x="790" y="460" width="10" height="14"/>
+    <rect x="820" y="460" width="10" height="14"/>
+    <rect x="850" y="460" width="10" height="14"/>
+    <rect x="880" y="460" width="10" height="14"/>
+    <rect x="745" y="520" width="10" height="14"/>
+    <rect x="805" y="520" width="10" height="14"/>
+    <rect x="865" y="520" width="10" height="14"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#fade)"/>
+</svg>

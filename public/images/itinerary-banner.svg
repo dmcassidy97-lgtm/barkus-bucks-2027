@@ -1,0 +1,34 @@
+<svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract dark gradient banner with a faint route line">
+  <defs>
+    <radialGradient id="g2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffb648" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffb648" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0d" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0a0a0d" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="b2"><feGaussianBlur stdDeviation="60"/></filter>
+  </defs>
+  <rect width="1600" height="500" fill="#0a0a0d"/>
+  <circle cx="1200" cy="120" r="320" fill="url(#g2)" filter="url(#b2)"/>
+  <circle cx="250" cy="400" r="260" fill="url(#g2)" filter="url(#b2)"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="1600" y2="100"/>
+    <line x1="0" y1="250" x2="1600" y2="250"/>
+    <line x1="0" y1="400" x2="1600" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="800" y1="0" x2="800" y2="500"/>
+    <line x1="1200" y1="0" x2="1200" y2="500"/>
+  </g>
+  <!-- faint dashed route line, nods to the day-by-day path without illustration -->
+  <path d="M 60 300 Q 400 200 700 280 T 1300 220 T 1560 260" stroke="#ff5a2c" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="2 10" fill="none"/>
+  <g fill="#ff5a2c" opacity="0.55">
+    <circle cx="60" cy="300" r="5"/>
+    <circle cx="480" cy="230" r="5"/>
+    <circle cx="900" cy="270" r="5"/>
+    <circle cx="1300" cy="220" r="5"/>
+    <circle cx="1560" cy="260" r="5"/>
+  </g>
+  <rect width="1600" height="500" fill="url(#fade3)"/>
+</svg>
