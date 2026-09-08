@@ -577,5 +577,46 @@ table.fines-table th { color: var(--text-faint); font-size: 0.72rem; text-transf
 .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 1.9rem; font-weight: 600; color: var(--text); }
 .stat .label { font-size: 0.78rem; color: var(--text-faint); }
 
+/* ---------- Countdown ---------- */
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  min-width: 78px;
+}
+.countdown-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  margin-top: 0.35rem;
+}
+.countdown-live {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 1.4rem 0 0;
+}
+
 .center { text-align: center; }
 .muted { color: var(--text-dim); }
