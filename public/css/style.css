@@ -415,6 +415,63 @@ footer.site-footer a { color: var(--text-dim); }
 .venue-callout h4 { margin: 0 0 0.5rem; color: var(--text); font-size: 1rem; font-weight: 600; }
 .venue-callout ul { color: var(--text-dim); }
 .venue-callout li strong { color: var(--text); }
+.venue-photo {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.photo-credit {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin: 0 0 0.9rem;
+}
+
+/* ---------- Bracket ---------- */
+.bracket-match { display: flex; flex-direction: column; gap: 0.6rem; }
+.bracket-row { display: flex; gap: 0.5rem; align-items: center; }
+.bracket-row .team-input { flex: 1; min-width: 0; }
+.bracket-row .win-btn { flex-shrink: 0; white-space: nowrap; }
+.champion-input { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Flights ---------- */
+.flight-point { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.2rem; }
+.flight-point .flight-time { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--text); }
+.flight-point .flight-date { font-size: 0.8rem; color: var(--text-faint); }
+.flight-details { margin: 0 0 0.9rem; padding-left: 0; }
+.flight-segment {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.4rem 0 1rem;
+  padding-left: 0.1rem;
+}
+.flight-segment .flight-duration { font-size: 0.78rem; color: var(--text-faint); white-space: nowrap; }
+.flight-segment .flight-line { flex: 1; height: 1px; background: var(--border-strong); position: relative; }
+.flight-segment .flight-line::after {
+  content: "→";
+  position: absolute;
+  right: -2px;
+  top: -9px;
+  color: var(--text-faint);
+}
+.flight-segment .flight-carrier { font-size: 0.85rem; color: var(--text-dim); white-space: nowrap; }
+.flight-layover {
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.9rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .flight-segment { flex-wrap: wrap; }
+  .flight-segment .flight-carrier { width: 100%; order: 3; }
+}
 
 .haiiang-box {
   background: var(--surface);
@@ -451,6 +508,7 @@ select option { background: var(--surface); }
 /* ---------- Punishments ---------- */
 .punishment-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .punishment-list li {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -458,7 +516,25 @@ select option { background: var(--surface); }
   font-size: 0.9rem;
   color: var(--text-dim);
 }
-.punishment-list li strong { color: var(--text); display: block; margin-bottom: 0.3rem; font-weight: 600; }
+.punishment-list li strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  padding-right: 2.5rem;
+}
+.punishment-price {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
 
 /* ---------- Admin ---------- */
 .login-box { max-width: 380px; margin: 3rem auto; }
