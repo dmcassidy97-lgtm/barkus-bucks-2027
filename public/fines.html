@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fines &amp; Rules — Barkus' Big Fat Greek Bucks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="emoji">B</span> Barkus' Big Fat Greek Bucks</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="attendees.html">Attendees</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="fines.html" class="active">Fines &amp; Rules</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<section class="banner">
+  <img src="images/fines-banner.svg" alt="Abstract dark gradient banner with a minimal scales-of-justice mark">
+  <div class="banner-content">
+    <h1>Fines &amp; Punishments</h1>
+    <p class="tagline">Justice is swift, biased, and settled by 10am court the next day.</p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <section class="section card">
+    <h2>How this works</h2>
+    <p>
+      See someone break a rule? Log it below — anyone can submit a fine, no permission needed. It goes
+      straight to the ledger for Court to review at 10am. The full fines log is admin-only (organizer eyes
+      only), so submit in good faith and let the judge sort out the drama.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Standard Punishments</h2>
+    <p class="muted">Whoever's holding court picks the punishment to fit the crime. Some classics to draw from:</p>
+    <ul class="punishment-list">
+      <li><strong>The Sash of Shame</strong> Wear the sash until someone else gets fined and takes it off you.</li>
+      <li><strong>Mystery Shot</strong> Bartender's choice. No questions, no chaser, no complaints.</li>
+      <li><strong>Buy-a-Round</strong> You're shouting the next round for the whole group. All of them.</li>
+      <li><strong>Opposite Hand Only</strong> Your next drink is non-dominant hand only, spills and all.</li>
+      <li><strong>The Waiter's Apprentice</strong> You're on drink-running duty for the group for the next hour.</li>
+      <li><strong>Toast in Character</strong> Propose the next toast in an accent voted on by the group.</li>
+      <li><strong>Truth Corner</strong> Answer three embarrassing questions from the group. No dodging.</li>
+      <li><strong>The Chicken Dance</strong> Perform it, in full, in the middle of the venue. Filmed, obviously.</li>
+      <li><strong>Silent Treatment</strong> No talking for 30 minutes. Charades only if you need something.</li>
+      <li><strong>The Naming Game</strong> Must refer to Barkus by his full ceremonial title for the rest of the day.</li>
+    </ul>
+  </section>
+
+  <section class="section card">
+    <h2>Report a Fine</h2>
+    <p class="muted">Open to everyone. Be specific — vague accusations get thrown out by the judge.</p>
+    <form id="fine-form">
+      <label for="accused">Who's getting fined?</label>
+      <input type="text" id="accused" name="accused" placeholder="e.g. Jake Ian Holder" required maxlength="200">
+
+      <label for="reason">What did they do?</label>
+      <textarea id="reason" name="reason" placeholder="Be specific. The judge appreciates detail." required maxlength="1000"></textarea>
+
+      <label for="offense_date">When did this happen?</label>
+      <input type="date" id="offense_date" name="offense_date" required min="2027-01-14" max="2027-01-19">
+
+      <label for="submitted_by">Your name (the snitch)</label>
+      <input type="text" id="submitted_by" name="submitted_by" placeholder="Who's reporting this?" required maxlength="200">
+
+      <div class="btn-row">
+        <button type="submit" class="btn btn-pink btn-block">Submit Fine</button>
+      </div>
+      <div id="form-msg" class="form-msg"></div>
+    </form>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="greek-key"></div>
+  <p>Barkus' Big Fat Greek Bucks · Ho Chi Minh City · 14–18 Jan 2027<br>
+  Only the organizer can see the full ledger. <a href="admin.html">Admin login</a>.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/fines.js"></script>
+</body>
+</html>

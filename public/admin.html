@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Barkus' Big Fat Greek Bucks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="emoji">B</span> Barkus' Big Fat Greek Bucks</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="attendees.html">Attendees</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="fines.html">Fines &amp; Rules</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap" style="padding-top:2rem;">
+
+  <!-- LOGIN VIEW -->
+  <section id="login-view" class="card login-box" style="display:none;">
+    <h2 class="center">🔒 Organizer Login</h2>
+    <p class="muted center">This bit's just for the organizer. Everyone else, scoot back to the <a href="fines.html">fines page</a>.</p>
+    <form id="login-form">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password">
+      <div class="btn-row">
+        <button type="submit" class="btn btn-block">Log In</button>
+      </div>
+      <div id="login-msg" class="form-msg"></div>
+    </form>
+  </section>
+
+  <!-- DASHBOARD VIEW -->
+  <section id="dashboard-view" style="display:none;">
+    <div class="admin-topbar">
+      <h1 style="margin:0;">The Ledger</h1>
+      <button id="logout-btn" class="btn btn-secondary">Log Out</button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num" id="stat-total">0</div><div class="label">Total Fines</div></div>
+      <div class="stat"><div class="num" id="stat-open">0</div><div class="label">Still Open</div></div>
+      <div class="stat"><div class="num" id="stat-resolved">0</div><div class="label">Resolved</div></div>
+    </div>
+
+    <div class="card table-scroll">
+      <table class="fines-table" id="fines-table">
+        <thead>
+          <tr>
+            <th>Accused</th>
+            <th>Reason</th>
+            <th>Offense Date</th>
+            <th>Reported By</th>
+            <th>Punishment</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="fines-tbody">
+          <!-- rows injected by admin.js -->
+        </tbody>
+      </table>
+      <p id="empty-msg" class="muted center" style="display:none;padding:1rem 0 0;">No fines logged yet. Give it time.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="greek-key"></div>
+  <p>Barkus' Big Fat Greek Bucks · Ho Chi Minh City · 14–18 Jan 2027</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendees — Barkus' Big Fat Greek Bucks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="emoji">B</span> Barkus' Big Fat Greek Bucks</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="attendees.html" class="active">Attendees</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="fines.html">Fines &amp; Rules</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<section class="banner">
+  <img src="images/attendees-banner.svg" alt="Abstract dark gradient banner">
+  <div class="banner-content">
+    <h1>The Squad</h1>
+    <p class="tagline">24 legends. Varying degrees of commitment. Zero legal liability accepted.</p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <section class="section card" style="border-color:var(--accent);text-align:center;">
+    <span class="badge badge-full" style="margin-bottom:0.6rem;">Guest of Honour</span>
+    <h2 style="margin-bottom:0.2rem;">Barkus</h2>
+    <p class="muted" style="margin:0;">The man, the myth, the reason we're all in Saigon losing our minds.
+      Full trip, obviously — it's his party.</p>
+  </section>
+
+  <section class="section">
+    <div class="attendee-filters">
+      <button class="filter-btn active" data-filter="all">Everyone (24)</button>
+      <button class="filter-btn" data-filter="full">Full Trip</button>
+      <button class="filter-btn" data-filter="hcmc">HCMC Only</button>
+      <button class="filter-btn" data-filter="maybe">Maybe 👀</button>
+    </div>
+
+    <ul class="attendee-list" id="attendee-list">
+      <!-- Full trip -->
+      <li class="attendee-row" data-type="full"><span class="name">Austin Cassidy Harding</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Ben Hayden Hennessy</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Blake Adam Taylor</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Charles Andrew Westacott</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Daniel James Jones</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Hamish David Glaspole</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Harry John Hopkins</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Jack Kevin Pitson</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Jake Ian Holder</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">James Stewart Christopher McGlashan</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Jordan Eric Nancovski</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Lachlan Alexander James Brown</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Luke Linton Russell</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Maximillian George Watt Horowitz</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Regan Lewis Butler</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Sam Patrick Cameron</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Timothy Joel Dickens</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Zachary Turrise</span><span class="badge badge-full">Full Trip</span></li>
+      <li class="attendee-row" data-type="maybe"><span class="name">Pat</span><span class="badge badge-maybe">Maybe</span></li>
+      <li class="attendee-row" data-type="maybe"><span class="name">Micky</span><span class="badge badge-maybe">Maybe</span></li>
+      <li class="attendee-row" data-type="maybe"><span class="name">Hubbard</span><span class="badge badge-maybe">Maybe</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Jordan Russell</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="hcmc"><span class="name">Nick Sladden</span><span class="badge badge-hcmc">HCMC only (14–18 Jan)</span></li>
+      <li class="attendee-row" data-type="full"><span class="name">Me</span><span class="badge badge-full">Full Trip</span></li>
+    </ul>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="greek-key"></div>
+  <p>Barkus' Big Fat Greek Bucks · Ho Chi Minh City · 14–18 Jan 2027<br>
+  What happens in Saigon gets fined in Saigon. <a href="fines.html">Snitch here</a>.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('#attendee-list .attendee-row');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      rows.forEach(row => {
+        row.style.display = (filter === 'all' || row.dataset.type === filter) ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
