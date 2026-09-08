@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/fines.json
+data/fines.json.tmp
+.DS_Store
+*.log
