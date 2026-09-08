@@ -25,7 +25,7 @@ function getAllFines() {
   return [...data.fines].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 }
 
-function insertFine({ accused, reason, submitted_by, offense_date }) {
+function insertFine({ accused, reason, submitted_by, offense_date, punishment, amount }) {
   const data = readData();
   const fine = {
     id: data.nextId,
@@ -33,7 +33,8 @@ function insertFine({ accused, reason, submitted_by, offense_date }) {
     reason,
     submitted_by,
     offense_date,
-    punishment: null,
+    punishment: punishment || null,
+    amount: typeof amount === 'number' ? amount : 0,
     resolved: 0,
     created_at: new Date().toISOString(),
   };
@@ -41,6 +42,16 @@ function insertFine({ accused, reason, submitted_by, offense_date }) {
   data.nextId += 1;
   writeData(data);
   return fine;
+}
+
+// Sum of $ already logged against this person on this date (case/whitespace-insensitive
+// name match), used to enforce the $10/person/day cap.
+function getTotalForPersonOnDate(accused, offense_date) {
+  const data = readData();
+  const key = accused.trim().toLowerCase();
+  return data.fines
+    .filter((f) => f.offense_date === offense_date && f.accused.trim().toLowerCase() === key)
+    .reduce((sum, f) => sum + (f.amount || 0), 0);
 }
 
 function updateResolved(id, resolved) {
@@ -63,4 +74,11 @@ function deleteFine(id) {
   writeData(data);
 }
 
-module.exports = { getAllFines, insertFine, updateResolved, updatePunishment, deleteFine };
+module.exports = {
+  getAllFines,
+  insertFine,
+  updateResolved,
+  updatePunishment,
+  deleteFine,
+  getTotalForPersonOnDate,
+};

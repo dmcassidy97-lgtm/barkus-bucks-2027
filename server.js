@@ -3,6 +3,7 @@ require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const session = require('express-session');
 const db = require('./db');
+const { PUNISHMENTS, DAILY_CAP } = require('./punishments');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,31 +32,52 @@ function requireAdmin(req, res, next) {
   return res.status(401).json({ error: 'Not authenticated' });
 }
 
+// ---------- Public: punishment menu ----------
+app.get('/api/punishments', (req, res) => {
+  res.json({ punishments: PUNISHMENTS, dailyCap: DAILY_CAP });
+});
+
 // ---------- Public: submit a fine ----------
 app.post('/api/fines', (req, res) => {
-  const { accused, reason, submitted_by, offense_date } = req.body || {};
+  const { accused, reason, submitted_by, offense_date, punishment } = req.body || {};
 
-  if (!accused || !reason || !submitted_by || !offense_date) {
-    return res.status(400).json({ error: 'accused, reason, submitted_by, and offense_date are all required.' });
+  if (!accused || !reason || !submitted_by || !offense_date || !punishment) {
+    return res.status(400).json({
+      error: 'accused, reason, submitted_by, offense_date, and punishment are all required.',
+    });
   }
   if (
     typeof accused !== 'string' || typeof reason !== 'string' ||
-    typeof submitted_by !== 'string' || typeof offense_date !== 'string'
+    typeof submitted_by !== 'string' || typeof offense_date !== 'string' ||
+    typeof punishment !== 'string'
   ) {
     return res.status(400).json({ error: 'Invalid field types.' });
   }
   if (accused.length > 200 || reason.length > 1000 || submitted_by.length > 200 || offense_date.length > 50) {
     return res.status(400).json({ error: 'One or more fields is too long.' });
   }
+  const price = PUNISHMENTS[punishment];
+  if (price === undefined) {
+    return res.status(400).json({ error: 'Unknown punishment selected.' });
+  }
+
+  const accusedTrimmed = accused.trim();
+  const offenseDateTrimmed = offense_date.trim();
+  const existingTotal = db.getTotalForPersonOnDate(accusedTrimmed, offenseDateTrimmed);
+  const remaining = Math.max(0, DAILY_CAP - existingTotal);
+  const amount = Math.min(price, remaining);
+  const capped = amount < price;
 
   const fine = db.insertFine({
-    accused: accused.trim(),
+    accused: accusedTrimmed,
     reason: reason.trim(),
     submitted_by: submitted_by.trim(),
-    offense_date: offense_date.trim(),
+    offense_date: offenseDateTrimmed,
+    punishment,
+    amount,
   });
 
-  res.status(201).json({ ok: true, id: fine.id });
+  res.status(201).json({ ok: true, id: fine.id, amount, capped });
 });
 
 // ---------- Admin auth ----------
