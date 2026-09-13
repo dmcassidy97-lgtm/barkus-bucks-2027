@@ -3,7 +3,7 @@ require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const session = require('express-session');
 const db = require('./db');
-const { PUNISHMENTS, DAILY_CAP } = require('./punishments');
+const { PUNISHMENTS, MIN_FINE, MAX_FINE, DAILY_CAP } = require('./punishments');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,16 +34,16 @@ function requireAdmin(req, res, next) {
 
 // ---------- Public: punishment menu ----------
 app.get('/api/punishments', (req, res) => {
-  res.json({ punishments: PUNISHMENTS, dailyCap: DAILY_CAP });
+  res.json({ punishments: PUNISHMENTS, minFine: MIN_FINE, maxFine: MAX_FINE, dailyCap: DAILY_CAP });
 });
 
 // ---------- Public: submit a fine ----------
 app.post('/api/fines', (req, res) => {
-  const { accused, reason, submitted_by, offense_date, punishment } = req.body || {};
+  const { accused, reason, submitted_by, offense_date, punishment, amount } = req.body || {};
 
-  if (!accused || !reason || !submitted_by || !offense_date || !punishment) {
+  if (!accused || !reason || !submitted_by || !offense_date || !punishment || amount === undefined) {
     return res.status(400).json({
-      error: 'accused, reason, submitted_by, offense_date, and punishment are all required.',
+      error: 'accused, reason, submitted_by, offense_date, punishment, and amount are all required.',
     });
   }
   if (
@@ -56,17 +56,20 @@ app.post('/api/fines', (req, res) => {
   if (accused.length > 200 || reason.length > 1000 || submitted_by.length > 200 || offense_date.length > 50) {
     return res.status(400).json({ error: 'One or more fields is too long.' });
   }
-  const price = PUNISHMENTS[punishment];
-  if (price === undefined) {
+  if (!PUNISHMENTS.includes(punishment)) {
     return res.status(400).json({ error: 'Unknown punishment selected.' });
+  }
+  const requestedAmount = Number(amount);
+  if (!Number.isInteger(requestedAmount) || requestedAmount < MIN_FINE || requestedAmount > MAX_FINE) {
+    return res.status(400).json({ error: `Fine amount must be between $${MIN_FINE} and $${MAX_FINE}.` });
   }
 
   const accusedTrimmed = accused.trim();
   const offenseDateTrimmed = offense_date.trim();
   const existingTotal = db.getTotalForPersonOnDate(accusedTrimmed, offenseDateTrimmed);
   const remaining = Math.max(0, DAILY_CAP - existingTotal);
-  const amount = Math.min(price, remaining);
-  const capped = amount < price;
+  const finalAmount = Math.min(requestedAmount, remaining);
+  const capped = finalAmount < requestedAmount;
 
   const fine = db.insertFine({
     accused: accusedTrimmed,
@@ -74,10 +77,10 @@ app.post('/api/fines', (req, res) => {
     submitted_by: submitted_by.trim(),
     offense_date: offenseDateTrimmed,
     punishment,
-    amount,
+    amount: finalAmount,
   });
 
-  res.status(201).json({ ok: true, id: fine.id, amount, capped });
+  res.status(201).json({ ok: true, id: fine.id, amount: finalAmount, capped });
 });
 
 // ---------- Admin auth ----------
