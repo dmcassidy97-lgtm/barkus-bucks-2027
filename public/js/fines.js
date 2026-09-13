@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accused: form.accused.value.trim(),
       reason: form.reason.value.trim(),
       punishment: form.punishment.value,
+      amount: Number(form.amount.value),
       offense_date: form.offense_date.value,
       submitted_by: form.submitted_by.value.trim(),
     };
