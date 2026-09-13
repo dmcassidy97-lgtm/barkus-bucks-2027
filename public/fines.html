@@ -27,7 +27,7 @@
 </header>
 
 <section class="banner">
-  <img src="images/fines-banner.svg" alt="Abstract dark gradient banner with a minimal scales-of-justice mark">
+  <img src="images/fines-banner.svg" alt="Abstract light gradient banner with a minimal scales-of-justice mark">
   <div class="banner-content">
     <h1>Fines &amp; Punishments</h1>
     <p class="tagline">Justice is swift, biased, and settled by 10am court the next day.</p>
@@ -36,32 +36,27 @@
 
 <div class="page-wrap">
 
-  <section class="section card">
-    <h2>How this works</h2>
-    <p>Anyone can log a fine below. Only the organizer sees the full ledger.</p>
-  </section>
-
   <section class="section">
     <h2>Standard Punishments</h2>
-    <p class="muted">Court picks the punishment. <strong>Max $10 per person, per day</strong> — after that, fines still count, just cost nothing extra.</p>
+    <p class="muted">Court picks the punishment. <strong>Max $10 per person, per day.</strong></p>
     <ul class="punishment-list">
-      <li><span class="punishment-price">$1</span><strong>The Sash of Shame</strong> Worn until the next fine.</li>
-      <li><span class="punishment-price">$3</span><strong>Mystery Shot</strong> Bartender's choice.</li>
-      <li><span class="punishment-price">$5</span><strong>Buy-a-Round</strong> For the whole group.</li>
-      <li><span class="punishment-price">$1</span><strong>Opposite Hand Only</strong> Next drink, non-dominant hand.</li>
-      <li><span class="punishment-price">$2</span><strong>The Waiter's Apprentice</strong> Drink-running duty, 1 hour.</li>
-      <li><span class="punishment-price">$1</span><strong>Toast in Character</strong> Group-picked accent.</li>
-      <li><span class="punishment-price">$2</span><strong>Truth Corner</strong> Three questions, no dodging.</li>
-      <li><span class="punishment-price">$3</span><strong>The Chicken Dance</strong> In full, filmed.</li>
-      <li><span class="punishment-price">$2</span><strong>Silent Treatment</strong> 30 minutes, no talking.</li>
-      <li><span class="punishment-price">$1</span><strong>The Naming Game</strong> Barkus's full title, all day.</li>
-      <li><span class="punishment-price">$5</span><strong>Call Mum/Dad</strong> Tell them you're gay. Straight face.</li>
+      <li><strong>The Sash of Shame</strong> Worn until the next fine.</li>
+      <li><strong>Mystery Shot</strong> Bartender's choice.</li>
+      <li><strong>Buy-a-Round</strong> For the whole group.</li>
+      <li><strong>Opposite Hand Only</strong> Next drink, non-dominant hand.</li>
+      <li><strong>The Waiter's Apprentice</strong> Drink-running duty, 1 hour.</li>
+      <li><strong>Toast in Character</strong> Group-picked accent.</li>
+      <li><strong>Truth Corner</strong> Three questions, no dodging.</li>
+      <li><strong>The Chicken Dance</strong> In full, filmed.</li>
+      <li><strong>Silent Treatment</strong> 30 minutes, no talking.</li>
+      <li><strong>The Naming Game</strong> Barkus's full title, all day.</li>
+      <li><strong>Call Mum/Dad</strong> Tell them you're gay. Straight face.</li>
     </ul>
   </section>
 
   <section class="section card">
     <h2>Report a Fine</h2>
-    <p class="muted">Be specific. $10 cap applies automatically.</p>
+    <p class="muted">Anyone can submit. Only the organizer sees the ledger. $10 cap per person, per day.</p>
     <form id="fine-form">
       <label for="accused">Who's getting fined?</label>
       <input type="text" id="accused" name="accused" placeholder="e.g. Jake Holder" required maxlength="200">
@@ -69,20 +64,28 @@
       <label for="reason">What did they do?</label>
       <textarea id="reason" name="reason" placeholder="Be specific. The judge appreciates detail." required maxlength="1000"></textarea>
 
-      <label for="punishment">Punishment (sets the fine amount)</label>
+      <label for="punishment">Punishment</label>
       <select id="punishment" name="punishment" required>
         <option value="" disabled selected>Choose a punishment…</option>
-        <option value="The Sash of Shame">The Sash of Shame — $1</option>
-        <option value="Mystery Shot">Mystery Shot — $3</option>
-        <option value="Buy-a-Round">Buy-a-Round — $5</option>
-        <option value="Opposite Hand Only">Opposite Hand Only — $1</option>
-        <option value="The Waiter's Apprentice">The Waiter's Apprentice — $2</option>
-        <option value="Toast in Character">Toast in Character — $1</option>
-        <option value="Truth Corner">Truth Corner — $2</option>
-        <option value="The Chicken Dance">The Chicken Dance — $3</option>
-        <option value="Silent Treatment">Silent Treatment — $2</option>
-        <option value="The Naming Game">The Naming Game — $1</option>
-        <option value="Call Mum/Dad">Call Mum/Dad — $5</option>
+        <option value="The Sash of Shame">The Sash of Shame</option>
+        <option value="Mystery Shot">Mystery Shot</option>
+        <option value="Buy-a-Round">Buy-a-Round</option>
+        <option value="Opposite Hand Only">Opposite Hand Only</option>
+        <option value="The Waiter's Apprentice">The Waiter's Apprentice</option>
+        <option value="Toast in Character">Toast in Character</option>
+        <option value="Truth Corner">Truth Corner</option>
+        <option value="The Chicken Dance">The Chicken Dance</option>
+        <option value="Silent Treatment">Silent Treatment</option>
+        <option value="The Naming Game">The Naming Game</option>
+        <option value="Call Mum/Dad">Call Mum/Dad</option>
+      </select>
+
+      <label for="amount">Fine amount</label>
+      <select id="amount" name="amount" required>
+        <option value="" disabled selected>Choose an amount…</option>
+        <option value="1">$1</option>
+        <option value="2">$2</option>
+        <option value="3">$3</option>
       </select>
 
       <label for="offense_date">When did this happen?</label>
