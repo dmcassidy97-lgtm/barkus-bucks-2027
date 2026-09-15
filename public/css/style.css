@@ -490,6 +490,120 @@ footer.site-footer {
   padding: 2rem;
 }
 
+/* ---------- Journey flowchart ---------- */
+.journey { margin: 2rem 0; }
+.journey-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 1.25rem;
+}
+.journey-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.journey-marker {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--text);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.02em;
+}
+.journey-marker.journey-marker--dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border-strong);
+}
+.journey-line {
+  flex: 1;
+  width: 1px;
+  min-height: 1.5rem;
+  background: var(--border-strong);
+  margin: 0.35rem 0;
+}
+.journey-step:last-child .journey-line { display: none; }
+.journey-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.journey-card.journey-card--muted {
+  background: var(--surface-2);
+  border-style: dashed;
+  padding: 0.9rem 1.5rem;
+}
+.journey-card.journey-card--accent {
+  border-left: 3px solid var(--text);
+}
+.journey-date {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+  margin-bottom: 0.3rem;
+}
+.journey-card h3 { margin-bottom: 0.35rem; }
+.journey-card p { margin: 0; }
+.journey-card .journey-route {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-top: 0.2rem;
+}
+.journey-card .journey-route strong { color: var(--text); font-weight: 700; }
+.journey-cost {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border-strong);
+  padding: 0.25rem 0.6rem;
+}
+.journey-marker.journey-marker--range { font-size: 0.68rem; }
+.journey-leg {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+.journey-leg:first-of-type { margin-top: 0.6rem; padding-top: 0; border-top: none; }
+.journey-leg h4 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.journey-note {
+  background: var(--surface-2);
+  border-left: 3px solid var(--border-strong);
+  padding: 0.6rem 0.9rem;
+  margin: 0.9rem 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.journey-note strong { color: var(--text); }
+@media (max-width: 520px) {
+  .journey-step { grid-template-columns: 34px 1fr; column-gap: 0.85rem; }
+  .journey-marker { width: 32px; height: 32px; font-size: 0.7rem; }
+  .journey-marker.journey-marker--range { font-size: 0.6rem; }
+  .journey-card { padding: 1.1rem 1.2rem; }
+}
+
 /* ---------- Forms ---------- */
 label { display: block; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; margin: 1.2rem 0 0.5rem; color: var(--text-dim); }
 input, textarea, select {
