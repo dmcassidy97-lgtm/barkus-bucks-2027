@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line-art beer mug doodle">
+  <g fill="none" stroke="#241f19" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 28 30 L 30 82 Q 30 88 36 88 L 66 88 Q 72 88 72 82 L 74 30 Z"/>
+    <path d="M 74 42 Q 90 42 90 56 Q 90 70 74 70"/>
+  </g>
+  <path d="M 31 34 L 71 34 L 69.5 80 Q 69 84 65 84 L 37 84 Q 33 84 32.5 80 Z" fill="#f5b34a"/>
+  <path d="M 30 30 Q 50 18 70 30 Q 74 34 68 36 L 32 36 Q 26 34 30 30 Z" fill="#ffffff" stroke="#241f19" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="42" cy="27" r="3" fill="#ffffff"/>
+  <circle cx="56" cy="24" r="2.4" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dog paw print doodle">
+  <ellipse cx="50" cy="66" rx="26" ry="22" fill="#241f19"/>
+  <ellipse cx="20" cy="34" rx="11" ry="14" fill="#241f19" transform="rotate(-15 20 34)"/>
+  <ellipse cx="46" cy="20" rx="11" ry="14" fill="#241f19" transform="rotate(-4 46 20)"/>
+  <ellipse cx="72" cy="22" rx="11" ry="14" fill="#241f19" transform="rotate(8 72 22)"/>
+  <ellipse cx="90" cy="42" rx="10" ry="13" fill="#241f19" transform="rotate(22 90 42)"/>
+</svg>

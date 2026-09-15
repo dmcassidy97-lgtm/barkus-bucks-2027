@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line-art water pipe doodle">
+  <g fill="none" stroke="#241f19" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 40 12 L 46 12 L 46 60 L 62 60 L 62 12 L 68 12"/>
+    <path d="M 34 60 Q 34 84 54 84 Q 74 84 74 60 Q 74 52 64 50 L 44 50 Q 34 52 34 60 Z"/>
+    <path d="M 62 40 L 84 30"/>
+    <ellipse cx="88" cy="27" rx="7" ry="5" transform="rotate(-25 88 27)"/>
+  </g>
+  <path d="M 37 62 Q 37 80 54 80 Q 71 80 71 62 Q 71 57 64 55 L 44 55 Q 37 57 37 62 Z" fill="#8ecae6" opacity="0.6"/>
+  <g fill="#8ecae6" opacity="0.8">
+    <circle cx="48" cy="26" r="2.5"/>
+    <circle cx="48" cy="34" r="2"/>
+    <circle cx="48" cy="42" r="2.5"/>
+  </g>
+</svg>
