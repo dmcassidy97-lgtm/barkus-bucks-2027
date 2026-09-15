@@ -202,8 +202,19 @@ footer.site-footer a { color: var(--text-dim); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(247,245,241,0.1) 0%, rgba(247,245,241,0.3) 45%, var(--bg) 100%);
+  background: linear-gradient(180deg, rgba(247,245,241,0.06) 0%, rgba(247,245,241,0.14) 68%, var(--bg) 100%);
   z-index: 1;
+}
+
+.hero .hero-mascot {
+  position: absolute;
+  inset: auto 1.25rem auto auto;
+  top: 1.25rem;
+  width: clamp(90px, 15vw, 170px);
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
 }
 
 .hero-content {
@@ -631,3 +642,29 @@ table.fines-table th { color: var(--text-faint); font-size: 0.72rem; text-transf
 
 .center { text-align: center; }
 .muted { color: var(--text-dim); }
+
+/* ---------- Doodles ---------- */
+.doodle {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  vertical-align: middle;
+  margin: -6px 0.15rem;
+}
+.doodle-lg { width: 52px; height: 52px; }
+.mascot-badge {
+  width: 64px;
+  height: auto;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 8px;
+}
+.mascot-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
