@@ -35,99 +35,124 @@
     <p class="muted">Optional extension. 7 days, motorbikes, mountains — for those not going straight home.</p>
   </section>
 
-  <!-- MONDAY -->
-  <section class="section card day-card">
-    <span class="day-date">MONDAY 18 JANUARY</span>
-    <h3>Saigon → Hanoi → Ha Giang</h3>
+  <div class="journey">
 
-    <div class="flight-point">
-      <span class="flight-time">08:40</span>
-      <span class="flight-date">Mon</span>
-    </div>
-    <div class="flight-details">
-      <h3 style="margin-bottom:0.1rem;">Ho Chi Minh City (SGN)</h3>
-    </div>
-    <div class="flight-segment">
-      <span class="flight-duration">2h 10m</span>
-      <div class="flight-line"></div>
-      <div class="flight-carrier"><strong>VJ148</strong> · Airbus A321 · Direct · ~A$75</div>
-    </div>
-    <div class="flight-point">
-      <span class="flight-time">10:50</span>
-      <span class="flight-date">Mon</span>
-    </div>
-    <div class="flight-details">
-      <h3 style="margin:0;">Hanoi (HAN)</h3>
+    <!-- 1: FLY TO HANOI -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker">1</div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card">
+        <span class="journey-date">Mon 18 Jan · 08:40 → 10:50</span>
+        <h3>✈️ Fly to Hanoi</h3>
+        <p class="journey-route">Ho Chi Minh City (SGN) <strong>→</strong> Hanoi (HAN)</p>
+        <p class="journey-route">VJ148 · Airbus A321 · Direct · 2h 10m</p>
+        <span class="journey-cost">~A$75</span>
+      </div>
     </div>
 
-    <div class="flight-layover">Free time in Hanoi · ~1h 40m</div>
-
-    <div class="flight-point">
-      <span class="flight-time">12:30</span>
-      <span class="flight-date">Mon</span>
-    </div>
-    <div class="flight-details">
-      <h3 style="margin-bottom:0.1rem;">156 Tran Quang Khai, Hanoi</h3>
-    </div>
-    <div class="flight-segment">
-      <span class="flight-duration">6h</span>
-      <div class="flight-line"></div>
-      <div class="flight-carrier"><strong>Bang Phan</strong> · Sleeper bus · ~A$21</div>
-    </div>
-    <div class="flight-point">
-      <span class="flight-time">18:30</span>
-      <span class="flight-date">Mon</span>
-    </div>
-    <div class="flight-details">
-      <h3 style="margin:0;">100 Tran Phu, Ha Giang</h3>
+    <!-- WAYPOINT: LAYOVER -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker journey-marker--dot"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card journey-card--muted">
+        <p>Free time in Hanoi · ~1h 40m before the bus</p>
+      </div>
     </div>
 
-    <div class="rule-box" style="margin-top:1rem;">Overnight in Ha Giang town — cost TBC.</div>
-  </section>
+    <!-- 2: BUS TO HA GIANG -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker">2</div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card">
+        <span class="journey-date">Mon 18 Jan · 12:30 → 18:30</span>
+        <h3>🚌 Bus to Ha Giang</h3>
+        <p class="journey-route">156 Tran Quang Khai, Hanoi <strong>→</strong> 100 Tran Phu, Ha Giang</p>
+        <p class="journey-route">Bang Phan · Sleeper bus · 6h</p>
+        <span class="journey-cost">~A$21</span>
+      </div>
+    </div>
 
-  <!-- LOOP -->
-  <section class="section card day-card">
-    <span class="day-date">TUESDAY – FRIDAY</span>
-    <h3>The Loop</h3>
-    <ul>
-      <li>4 days on motorbikes around the Ha Giang Loop — mountain passes, the works.</li>
-      <li>Estimated <strong>$250–300 per person</strong> (bike hire, fuel, guide — exact breakdown TBC).</li>
-      <li><strong>Friday night:</strong> back in Ha Giang town.</li>
-    </ul>
-  </section>
+    <!-- WAYPOINT: OVERNIGHT -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker journey-marker--dot"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card journey-card--muted">
+        <p>Overnight in Ha Giang town · cost TBC</p>
+      </div>
+    </div>
 
-  <!-- SATURDAY -->
-  <section class="section card day-card">
-    <span class="day-date">SATURDAY</span>
-    <h3>Back to Hanoi</h3>
-    <div class="flight-point">
-      <span class="flight-time">~07:00</span>
-      <span class="flight-date">Sat</span>
+    <!-- 3: THE LOOP -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker">×4</div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card journey-card--accent">
+        <span class="journey-date">Tue 19 – Fri 22 Jan</span>
+        <h3>🛵 The Loop</h3>
+        <p class="journey-route">4 days on motorbikes around the Ha Giang Loop — mountain passes, the works.</p>
+        <p class="journey-route">Bike hire, fuel, guide — exact breakdown TBC.</p>
+        <span class="journey-cost">~$250–300 pp</span>
+      </div>
     </div>
-    <div class="flight-details">
-      <h3 style="margin-bottom:0.1rem;">Ha Giang</h3>
-    </div>
-    <div class="flight-segment">
-      <span class="flight-duration">~7h</span>
-      <div class="flight-line"></div>
-      <div class="flight-carrier">Bus back to Hanoi</div>
-    </div>
-    <div class="flight-point">
-      <span class="flight-time">~14:00</span>
-      <span class="flight-date">Sat</span>
-    </div>
-    <div class="flight-details">
-      <h3 style="margin:0;">Hanoi</h3>
-    </div>
-    <div class="rule-box" style="margin-top:1rem;"><strong>Saturday night:</strong> final night out in Hanoi — send the boys off properly.</div>
-  </section>
 
-  <!-- SUNDAY -->
-  <section class="section card day-card">
-    <span class="day-date">SUNDAY</span>
-    <h3>Fly Home</h3>
-    <p class="muted">Flight TBC.</p>
-  </section>
+    <!-- WAYPOINT: BACK IN TOWN -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker journey-marker--dot"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card journey-card--muted">
+        <p>Friday night · back in Ha Giang town</p>
+      </div>
+    </div>
+
+    <!-- 4: BUS BACK TO HANOI -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker">4</div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card">
+        <span class="journey-date">Sat 23 Jan · ~07:00 → ~14:00</span>
+        <h3>🚌 Bus back to Hanoi</h3>
+        <p class="journey-route">Ha Giang <strong>→</strong> Hanoi</p>
+        <p class="journey-route">~7h on the road</p>
+      </div>
+    </div>
+
+    <!-- WAYPOINT: FINAL NIGHT -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker journey-marker--dot"></div>
+        <div class="journey-line"></div>
+      </div>
+      <div class="journey-card journey-card--muted">
+        <p><strong>Saturday night</strong> · final night out in Hanoi — send the boys off properly.</p>
+      </div>
+    </div>
+
+    <!-- 5: FLY HOME -->
+    <div class="journey-step">
+      <div class="journey-rail">
+        <div class="journey-marker">5</div>
+      </div>
+      <div class="journey-card">
+        <span class="journey-date">Sun 24 Jan</span>
+        <h3>✈️ Fly Home</h3>
+        <p class="journey-route">Flight TBC.</p>
+      </div>
+    </div>
+
+  </div>
 
 </div>
 
