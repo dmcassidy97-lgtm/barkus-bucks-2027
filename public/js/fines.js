@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (data.capped) {
-        msg.textContent = `Fine logged at $${data.amount} — they'd already hit today's $10 cap, so this one's discounted. Court still deals with it at 10am. 🔨`;
+        msg.textContent = `Fine logged at $${data.amount} — today's $10 cap was already reached, so this one's discounted. Court deals with it at 10am.`;
       } else {
-        msg.textContent = `Fine logged for $${data.amount}. Court will deal with it at 10am. 🔨`;
+        msg.textContent = `Fine logged for $${data.amount}. Court deals with it at 10am.`;
       }
       msg.className = 'form-msg show success';
       form.reset();
