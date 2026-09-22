@@ -124,6 +124,15 @@ header.site-header {
   height: 26px;
   background: var(--accent);
   color: var(--accent-text);
+  overflow: hidden;
+}
+.brand .emoji img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(2.5);
+  transform-origin: 40% 15%;
 }
 
 nav.main-nav {
@@ -382,6 +391,39 @@ footer.site-footer {
 }
 .grid .card { margin-bottom: 0; border: none; background: var(--surface); }
 
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.nav-tile {
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  padding: 2.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-tile .nav-tile-icon { font-size: 1.7rem; line-height: 1; }
+.nav-tile .nav-tile-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.nav-tile:hover { background: var(--text); color: var(--bg); }
+@media (max-width: 560px) {
+  .nav-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-tile { padding: 1.75rem 1rem; }
+}
+
 .badge {
   display: inline-block;
   font-size: 0.68rem;
@@ -437,6 +479,44 @@ footer.site-footer {
 .day-card ul { margin: 0.5rem 0; padding-left: 1.2rem; color: var(--text-dim); }
 .day-card li { margin-bottom: 0.5rem; line-height: 1.65; }
 .day-card li strong { color: var(--text); font-weight: 700; }
+
+.day-accordion {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text);
+  margin-bottom: 1.5rem;
+}
+.day-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.6rem 1.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.day-accordion summary::-webkit-details-marker { display: none; }
+.day-accordion .day-summary-main { display: flex; flex-direction: column; gap: 0.3rem; }
+.day-accordion .day-summary-main .day-date { margin-bottom: 0; }
+.day-accordion .day-summary-main h3 { margin: 0; }
+.day-accordion .day-chevron {
+  color: var(--text-faint);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+.day-accordion[open] .day-chevron { transform: rotate(180deg); }
+.day-accordion-panel {
+  padding: 0 1.85rem 1.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.day-accordion-panel ul { margin: 0.5rem 0; padding-left: 1.2rem; color: var(--text-dim); }
+.day-accordion-panel li { margin-bottom: 0.5rem; line-height: 1.65; }
+.day-accordion-panel li strong { color: var(--text); font-weight: 700; }
+.day-accordion-panel > p:first-child,
+.day-accordion-panel > .rule-box:first-child { margin-top: 0; }
 
 .rule-box {
   background: var(--surface-2);
