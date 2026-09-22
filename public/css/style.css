@@ -424,6 +424,37 @@ footer.site-footer {
   .nav-tile { padding: 1.75rem 1rem; }
 }
 
+.cost-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+.cost-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.cost-list li span:last-child {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cost-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.1rem;
+  margin-top: 0.4rem;
+  border-top: 2px solid var(--text);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
 .badge {
   display: inline-block;
   font-size: 0.68rem;
@@ -580,6 +611,7 @@ footer.site-footer {
   color: var(--text-faint);
 }
 .flight-segment .flight-carrier { font-size: 0.85rem; color: var(--text-dim); white-space: nowrap; }
+.airline-logo { height: 16px; width: auto; vertical-align: middle; margin-right: 0.4rem; display: inline-block; }
 .flight-layover {
   margin: 0 0 1rem;
   padding: 0.5rem 0.9rem;
