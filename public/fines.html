@@ -50,7 +50,6 @@
       <li><strong>The Chicken Dance</strong> In full, filmed.</li>
       <li><strong>Silent Treatment</strong> 30 minutes, no talking.</li>
       <li><strong>The Naming Game</strong> Barkus's full title, all day.</li>
-      <li><strong>Call Mum/Dad</strong> Tell them you're gay. Straight face.</li>
     </ul>
   </section>
 
@@ -77,8 +76,13 @@
         <option value="The Chicken Dance">The Chicken Dance</option>
         <option value="Silent Treatment">Silent Treatment</option>
         <option value="The Naming Game">The Naming Game</option>
-        <option value="Call Mum/Dad">Call Mum/Dad</option>
+        <option value="__custom__">Other — write your own</option>
       </select>
+
+      <div id="custom-punishment-wrap" style="display:none;">
+        <label for="custom_punishment">Describe the punishment</label>
+        <input type="text" id="custom_punishment" name="custom_punishment" maxlength="100" placeholder="e.g. Sing the national anthem, badly">
+      </div>
 
       <label for="amount">Fine amount</label>
       <select id="amount" name="amount" required>
