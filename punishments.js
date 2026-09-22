@@ -13,7 +13,6 @@ const PUNISHMENTS = [
   "The Chicken Dance",
   "Silent Treatment",
   "The Naming Game",
-  "Call Mum/Dad",
 ];
 
 const MIN_FINE = 1;

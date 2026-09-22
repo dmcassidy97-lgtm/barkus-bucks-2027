@@ -56,8 +56,9 @@ app.post('/api/fines', (req, res) => {
   if (accused.length > 200 || reason.length > 1000 || submitted_by.length > 200 || offense_date.length > 50) {
     return res.status(400).json({ error: 'One or more fields is too long.' });
   }
-  if (!PUNISHMENTS.includes(punishment)) {
-    return res.status(400).json({ error: 'Unknown punishment selected.' });
+  const punishmentTrimmed = punishment.trim();
+  if (!punishmentTrimmed || punishmentTrimmed.length > 100) {
+    return res.status(400).json({ error: 'Punishment must be between 1 and 100 characters.' });
   }
   const requestedAmount = Number(amount);
   if (!Number.isInteger(requestedAmount) || requestedAmount < MIN_FINE || requestedAmount > MAX_FINE) {
@@ -76,7 +77,7 @@ app.post('/api/fines', (req, res) => {
     reason: reason.trim(),
     submitted_by: submitted_by.trim(),
     offense_date: offenseDateTrimmed,
-    punishment,
+    punishment: punishmentTrimmed,
     amount: finalAmount,
   });
 
