@@ -904,3 +904,61 @@ table.fines-table th { color: var(--text-faint); font-size: 0.7rem; text-transfo
 
 .center { text-align: center; }
 .muted { color: var(--text-dim); }
+
+/* ---------- Budget breakdown ---------- */
+.budget h2 { margin-bottom: 0.2rem; }
+.budget-table {
+  margin-top: 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.budget-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.budget-row:last-child { border-bottom: none; }
+.budget-head {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  border-bottom: 2px solid var(--text);
+}
+.budget-desc strong { display: block; font-weight: 600; }
+.budget-desc small {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.budget-aud {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.budget-aud { font-weight: 700; }
+.budget-head .budget-aud { font-size: inherit; font-weight: inherit; color: inherit; }
+.budget-row--feature { background: var(--surface-2); }
+.budget-row--feature .budget-aud { font-size: 1.05rem; }
+.budget-total {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+.budget-total .budget-desc strong {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.budget-total .budget-aud { font-size: 1.6rem; font-weight: 800; }
+
+@media (max-width: 520px) {
+  .budget-row { gap: 0.25rem 1rem; padding: 0.9rem 1rem; }
+}
