@@ -37,9 +37,15 @@
   <section class="section card">
     <h2 style="margin-bottom:0.2rem;">🏠 Accommodation</h2>
     <p class="muted" style="margin-bottom:1.2rem;">Thu 14 – Mon 18 Jan 2027</p>
+    <div class="due-notice" style="margin-bottom:1.2rem;">
+      <span class="due-label">Accommodation per person</span>
+      <strong id="pp-cost">$415.83</strong>
+      <span id="pp-note" style="display:block;margin-top:0.35rem;font-size:0.82rem;opacity:0.75;">Both villas ($6,653.26) ÷ 16 people who have paid</span>
+    </div>
     <div class="venue-callout" style="margin-top:0;">
       <h4>Lux White Villa</h4>
       <p>10BR/8BA, sleeps 16+, pool, gym, Landmark 81 view. District 2, ~10 min from D1.</p>
+      <p><strong>Total cost: $3,728.86</strong></p>
       <p class="muted"><a href="https://www.airbnb.com.au/rooms/1547852784375563394" target="_blank" rel="noopener">View on Airbnb →</a></p>
     </div>
     <div class="venue-callout">
@@ -495,5 +501,20 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+(function () {
+  var TOTAL = 3728.86 + 2924.40;
+  var fmt = function (n) { return n.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  fetch('attendees.html').then(function (r) { return r.text(); }).then(function (html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var paid = [].filter.call(doc.querySelectorAll('.attendee-row .name'), function (e) {
+      return e.textContent.indexOf('(maybe)') < 0 && e.textContent.indexOf('\uD83D\uDCB2') >= 0;
+    }).length;
+    if (!paid) return;
+    document.getElementById('pp-cost').textContent = '$' + fmt(TOTAL / paid);
+    document.getElementById('pp-note').textContent = 'Both villas ($' + fmt(TOTAL) + ') ÷ ' + paid + ' people who have paid';
+  }).catch(function () {});
+})();
+</script>
 </body>
 </html>
