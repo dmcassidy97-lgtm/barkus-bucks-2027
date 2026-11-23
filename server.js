@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const db = require('./db');
 const { PUNISHMENTS, MIN_FINE, MAX_FINE, DAILY_CAP } = require('./punishments');
+const { SHIRT_SIZES } = require('./shirt-sizes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -125,6 +126,11 @@ app.delete('/api/admin/fines/:id', requireAdmin, (req, res) => {
   const id = Number(req.params.id);
   db.deleteFine(id);
   res.json({ ok: true });
+});
+
+// ---------- Admin: shirt sizes ----------
+app.get('/api/admin/shirts', requireAdmin, (req, res) => {
+  res.json({ shirts: SHIRT_SIZES });
 });
 
 // ---------- Static site ----------
