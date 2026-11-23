@@ -6,7 +6,7 @@ const SHIRT_SIZES = [
   { name: 'Free Palestine', status: 'Confirmed', size: 'TBC' },
   { name: 'Deccas', status: 'Confirmed', size: 'L' },
   { name: 'Jordzo', status: 'Confirmed', size: 'XL' },
-  { name: 'Stingray', status: 'Confirmed', size: 'TBC' },
+  { name: 'Stingray', status: 'Confirmed', size: 'L' },
   { name: 'Waffle', status: 'Confirmed', size: 'TBC' },
   { name: 'MOTH', status: 'Confirmed', size: 'L' },
   { name: 'Rusty', status: 'Confirmed', size: 'L' },
