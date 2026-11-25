@@ -2,12 +2,12 @@
 // via /api/admin/shirts. "TBC" = not collected yet.
 // Order matches the attendees page. Nicknames only (this repo is public).
 const SHIRT_SIZES = [
-  { name: 'Barkus', status: 'Guest of honour', size: 'TBC' },
-  { name: 'Free Palestine', status: 'Confirmed', size: 'TBC' },
+  { name: 'Barkus', status: 'Guest of honour', size: 'XL' },
+  { name: 'Free Palestine', status: 'Confirmed', size: 'M' },
   { name: 'Deccas', status: 'Confirmed', size: 'L' },
   { name: 'Jordzo', status: 'Confirmed', size: 'XL' },
   { name: 'Stingray', status: 'Confirmed', size: 'L' },
-  { name: 'Waffle', status: 'Confirmed', size: 'TBC' },
+  { name: 'Waffle', status: 'Confirmed', size: 'XL' },
   { name: 'MOTH', status: 'Confirmed', size: 'L' },
   { name: 'Rusty', status: 'Confirmed', size: 'L' },
   { name: 'Henno', status: 'Confirmed', size: 'XL' },
@@ -18,7 +18,7 @@ const SHIRT_SIZES = [
   { name: 'Jakey', status: 'Confirmed', size: 'TBC' },
   { name: 'Conesy', status: 'Confirmed', size: 'L' },
   { name: 'Sladdy', status: 'Confirmed', size: 'M' },
-  { name: 'Glash', status: 'Confirmed', size: 'TBC' },
+  { name: 'Glash', status: 'Confirmed', size: 'XL' },
   { name: 'MHMH', status: 'Confirmed', size: 'TBC' },
   { name: 'Westy', status: 'Confirmed', size: 'L' },
   { name: 'Maximillian', status: 'Confirmed', size: 'L' },
