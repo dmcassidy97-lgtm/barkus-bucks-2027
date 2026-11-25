@@ -11,7 +11,7 @@ const SHIRT_SIZES = [
   { name: 'MOTH', status: 'Confirmed', size: 'L' },
   { name: 'Rusty', status: 'Confirmed', size: 'L' },
   { name: 'Henno', status: 'Confirmed', size: 'XL' },
-  { name: 'Pits', status: 'Confirmed', size: 'TBC' },
+  { name: 'Pits', status: 'Confirmed', size: 'M' },
   { name: 'Scamma', status: 'Confirmed', size: 'L' },
   { name: 'JRuss No Fuss', status: 'Confirmed', size: 'TBC' },
   { name: 'Blakey', status: 'Confirmed', size: 'TBC' },
