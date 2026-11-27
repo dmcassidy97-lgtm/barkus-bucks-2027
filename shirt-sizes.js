@@ -3,7 +3,7 @@
 // Order matches the attendees page. Nicknames only (this repo is public).
 const SHIRT_SIZES = [
   { name: 'Barkus', status: 'Guest of honour', size: 'XL' },
-  { name: 'Free Palestine', status: 'Confirmed', size: 'M' },
+  { name: 'Free Palestine', status: 'Confirmed', size: 'L' },
   { name: 'Deccas', status: 'Confirmed', size: 'L' },
   { name: 'Jordzo', status: 'Confirmed', size: 'XL' },
   { name: 'Stingray', status: 'Confirmed', size: 'L' },
@@ -17,7 +17,7 @@ const SHIRT_SIZES = [
   { name: 'Blakey', status: 'Confirmed', size: 'TBC' },
   { name: 'Jakey', status: 'Confirmed', size: 'TBC' },
   { name: 'Conesy', status: 'Confirmed', size: 'L' },
-  { name: 'Sladdy', status: 'Confirmed', size: 'M' },
+  { name: 'Sladdy', status: 'Confirmed', size: 'L' },
   { name: 'Glash', status: 'Confirmed', size: 'XL' },
   { name: 'MHMH', status: 'Confirmed', size: 'TBC' },
   { name: 'Westy', status: 'Confirmed', size: 'L' },
