@@ -23,7 +23,7 @@ const SHIRT_SIZES = [
   { name: 'Westy', status: 'Confirmed', size: 'L' },
   { name: 'Maximillian', status: 'Confirmed', size: 'L' },
   { name: 'Zac', status: 'Confirmed', size: 'L' },
-  { name: 'Brownie', status: 'Maybe', size: 'TBC' },
+  { name: 'Brownie', status: 'Maybe', size: 'L' },
   { name: 'Pat', status: 'Maybe', size: 'TBC' },
   { name: 'Hubbo', status: 'Maybe', size: 'TBC' },
   { name: 'Marky', status: 'Not on attendees page', size: 'L' },
